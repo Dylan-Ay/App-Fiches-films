@@ -1,0 +1,141 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+.fit-content {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main .unfilled-star {
+  color: #d8d8d8;
+}
+
+main .card, main .list-group {
+  -webkit-box-orient: unset;
+  -webkit-box-direction: unset;
+      -ms-flex-direction: unset;
+          flex-direction: unset;
+}
+
+main .list-group li {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@media screen and (max-width: 991.5px) {
+  main .card-img-top {
+    width: 385px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  height: 63px;
+}
+
+header .navbar {
+  z-index: 1;
+}
+
+header .form {
+  position: relative;
+}
+
+@media screen and (max-width: 991.5px) {
+  header .form {
+    width: 75%;
+    margin: auto;
+  }
+}
+
+header .form:focus {
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+  border-color: white;
+}
+
+header .form .btn {
+  position: absolute;
+  right: 0;
+  width: 40px;
+  border-radius: unset;
+  background-color: antiquewhite;
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+  opacity: 0.9;
+}
+
+header .form .btn:hover {
+  opacity: 1;
+}
+
+#movies img, #directors img, #actors img {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+@media screen and (max-width: 575.5px) {
+  #movies img, #directors img, #actors img {
+    width: 310px;
+  }
+}
+
+#movies .list-section figcaption, #directors .list-section figcaption, #actors .list-section figcaption {
+  color: #212529;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+#movies .img-container, #directors .img-container, #actors .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+#movies .img-container:hover, #directors .img-container:hover, #actors .img-container:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+@media screen and (max-width: 507.5px) {
+  #movies .img-container, #directors .img-container, #actors .img-container {
+    margin-bottom: 10px;
+  }
+}
+
+#detail-director .fs-filmography, #detail-actor .fs-filmography {
+  font-size: 22px;
+}
+
+@media screen and (min-width: 1200px) {
+  #detail-director .col-xl-2, #detail-actor .col-xl-2 {
+    width: 18.666667%;
+  }
+}
+
+#detail-movie h1 {
+  font-size: calc(0.9rem + .9vw);
+}
+/*# sourceMappingURL=style.css.map */

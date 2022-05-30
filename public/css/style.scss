@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.fit-content{
+    height: fit-content;
+}
+
+main{
+    .unfilled-star{
+        color: #d8d8d8;
+    }
+    .card, .list-group{
+        flex-direction: unset;
+    }
+    .list-group{
+        & li{
+            width: fit-content;
+        }
+    }
+    .card-img-top{
+        @media screen and (max-width: 991.5px) {
+            width: 385px;
+        }
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+
+header{
+    height: 63px;
+    .navbar{
+        z-index: 1;
+    }
+    .form{
+        position: relative;
+        @media screen and (max-width: 991.5px) {
+            width: 75%;
+            margin: auto;
+        }
+        &:focus{
+            box-shadow: unset;
+            border-color: white;
+        }
+        & .btn{
+            position: absolute;
+            right: 0;
+            width: 40px;
+            border-radius: unset;
+            background-color: antiquewhite;
+            border-top-right-radius: .25rem;
+            border-bottom-right-radius: .25rem;
+            opacity: 0.9;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+#movies, #directors, #actors{
+    img{
+        height: fit-content;
+        @media screen and (max-width: 575.5px) {
+            width: 310px;
+        }
+    }
+    .list-section{
+        & figcaption{
+            color: #212529;
+            max-width: fit-content;
+        };
+    }
+    .img-container{
+        display: flex;
+        flex-direction: column;
+        transition-property: transform;
+        transition-duration: 200ms;
+        transform: scale(1);
+        &:hover{
+            transform: scale(1.02);
+        }
+        @media screen and (max-width: 507.5px) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+#detail-director, #detail-actor{
+    .fs-filmography{
+        font-size: 22px;
+    }
+
+    .col-xl-2{
+        @media screen and (min-width: 1200px) {
+            width: 18.666667%;
+        }
+    }
+}
+#detail-movie{
+    & h1{
+       font-size: calc(0.9rem + .9vw);
+    }
+}
