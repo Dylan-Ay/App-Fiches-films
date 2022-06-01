@@ -23,9 +23,9 @@ WHERE p.lastname = "lucas";
 
 -- d. Nombre de films par genre (classés dans l’ordre décroissant) 
 SELECT name, COUNT(mt.id_movie) AS nbMovies
-FROM type t 
-INNER JOIN movie_type mt 
-ON t.id_type = mt.id_type
+FROM genre g
+INNER JOIN movie_genre mg
+ON g.id_genre = mg.id_genre
 GROUP BY name
 ORDER BY nbMovies DESC;
 

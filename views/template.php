@@ -1,4 +1,6 @@
-<!doctype html>
+
+
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <!-- Required meta tags -->
@@ -14,7 +16,7 @@
   <header class="bg-dark mb-5">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container pt-1">
-          <a class="navbar-brand" href="#">Fiches de Films</a>
+          <a class="navbar-brand" href="index.php?action=home">Fiches de Films</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -34,6 +36,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link px-lg-5" href="index.php?action=directorsList">Réalisateurs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.php?action=genresList">Genres</a>
               </li>
             </ul>
             <form class="form my-2 my-lg-0 d-flex">
@@ -85,52 +90,49 @@
                     </a>
                 </div>
             </section>
-            <!-- Section: Social media -->
 
             <!-- Section: Links  -->
             <section class="">
                 <div class="container text-center text-md-start mt-5">
-                <!-- Grid row -->
                     <div class="row mt-3">
-                        <!-- Grid column -->
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Fiches de Films
-                        </h6>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nihil cupiditate voluptate sapiente quaerat quam non fugit! Quam quia quas quae expedita, dolores veritatis, cupiditate nam voluptas, culpa corrupti recusandae!
-                        </p>
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <i class="fas fa-gem me-3"></i>Fiches de Films
+                            </h6>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nihil cupiditate voluptate sapiente quaerat quam non fugit! Quam quia quas quae expedita, dolores veritatis, cupiditate nam voluptas, culpa corrupti recusandae!
+                            </p>
                         </div>
                         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                             <h6 class="text-uppercase fw-bold mb-4">
                                 Liens
                             </h6>
                             <p>
-                                <a href="/views/movie/movieList.php" class="text-reset">Films</a>
+                                <a href="index.php?action=moviesList" class="text-reset">Films</a>
                             </p>
                             <p>
-                                <a href="/views/actor/actorList.php" class="text-reset">Acteurs</a>
+                                <a href="index.php?action=actorsList" class="text-reset">Acteurs</a>
                             </p>
                             <p>
-                                <a href="/views/director/directorList.php" class="text-reset">Réalisateurs</a>
+                                <a href="index.php?action=directorsList" class="text-reset">Réalisateurs</a>
                             </p>
                         </div>
                         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Contact
-                        </h6>
-                            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                        <p>
-                            <i class="fas fa-envelope me-3"></i>
-                            info@example.com
-                        </p>
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Contact
+                            </h6>
+                                <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                info@example.com
+                            </p>
                             <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
                         </div>
                     </div>
                 </div>
             </section>
+
             <!-- Copyright -->
             <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
                 © 2021 Copyright: Dylan

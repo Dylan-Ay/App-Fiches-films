@@ -23,6 +23,25 @@ main{
         @media screen and (max-width: 991.5px) {
             width: 385px;
         }
+        @media screen and (max-width: 410px) {
+            width: 100%;
+        }
+    }
+    a{
+        color: #111;
+    }
+    .img-container{
+        display: flex;
+        flex-direction: column;
+        transition-property: transform;
+        transition-duration: 200ms;
+        transform: scale(1);
+        &:hover{
+            transform: scale(1.02);
+        }
+        @media screen and (max-width: 507.5px) {
+            margin-bottom: 10px;
+        }
     }
 }
 
@@ -62,7 +81,7 @@ header{
     }
 }
 
-#movies, #directors, #actors{
+#movies, #directors, #actors, #genre{
     img{
         height: fit-content;
         @media screen and (max-width: 575.5px) {
@@ -75,22 +94,9 @@ header{
             max-width: fit-content;
         };
     }
-    .img-container{
-        display: flex;
-        flex-direction: column;
-        transition-property: transform;
-        transition-duration: 200ms;
-        transform: scale(1);
-        &:hover{
-            transform: scale(1.02);
-        }
-        @media screen and (max-width: 507.5px) {
-            margin-bottom: 10px;
-        }
-    }
 }
 
-#detail-director, #detail-actor{
+#detail-director, #detail-actor, #detail-movie, #detail-genre{
     .fs-filmography{
         font-size: 22px;
     }
@@ -104,5 +110,24 @@ header{
 #detail-movie{
     & h1{
        font-size: calc(0.9rem + .9vw);
+    }
+    .list-group{
+        line-height: 30px;
+    }
+}
+
+#genre{
+    figure{
+        margin: 0;
+    }
+    figcaption{
+        position: absolute;
+        top: 50%;
+        color: white !important;
+        text-transform: uppercase;
+        right: 0;
+        margin: auto;
+        left: 0;
+        font-weight: bold;
     }
 }

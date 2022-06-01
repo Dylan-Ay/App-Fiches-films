@@ -121,22 +121,22 @@ INSERT INTO `movie` (`id_movie`, `title`, `release_date`, `length`, `synopsis`, 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `movie_type`
+-- Structure de la table `movie_genre`
 --
 
-DROP TABLE IF EXISTS `movie_type`;
-CREATE TABLE IF NOT EXISTS `movie_type` (
-  `id_type` int(11) NOT NULL,
+DROP TABLE IF EXISTS `movie_genre`;
+CREATE TABLE IF NOT EXISTS `movie_genre` (
+  `id_genre` int(11) NOT NULL,
   `id_movie` int(11) NOT NULL,
-  KEY `fk_movie_type` (`id_type`),
+  KEY `fk_movie_genre` (`id_genre`),
   KEY `fk_movie` (`id_movie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `movie_type`
+-- Déchargement des données de la table `movie_genre`
 --
 
-INSERT INTO `movie_type` (`id_type`, `id_movie`) VALUES
+INSERT INTO `movie_genre` (`id_genre`, `id_movie`) VALUES
 (1, 1),
 (1, 2);
 
@@ -192,21 +192,21 @@ INSERT INTO `role` (`id_role`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `type`
+-- Structure de la table `genre`
 --
 
-DROP TABLE IF EXISTS `type`;
-CREATE TABLE IF NOT EXISTS `type` (
-  `id_type` int(11) NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `genre`;
+CREATE TABLE IF NOT EXISTS `genre` (
+  `id_genre` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_type`)
+  PRIMARY KEY (`id_genre`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `type`
+-- Déchargement des données de la table `genre`
 --
 
-INSERT INTO `type` (`id_type`, `name`) VALUES
+INSERT INTO `genre` (`id_genre`, `name`) VALUES
 (1, 'Science-Fiction'),
 (2, 'Fantasy');
 
@@ -241,11 +241,11 @@ ALTER TABLE `movie`
   ADD CONSTRAINT `fk_director_movie` FOREIGN KEY (`id_director`) REFERENCES `director` (`id_director`);
 
 --
--- Contraintes pour la table `movie_type`
+-- Contraintes pour la table `movie_genre`
 --
-ALTER TABLE `movie_type`
+ALTER TABLE `movie_genre`
   ADD CONSTRAINT `fk_movie` FOREIGN KEY (`id_movie`) REFERENCES `movie` (`id_movie`),
-  ADD CONSTRAINT `fk_movie_type` FOREIGN KEY (`id_type`) REFERENCES `type` (`id_type`);
+  ADD CONSTRAINT `fk_movie_genre` FOREIGN KEY (`id_genre`) REFERENCES `genre` (`id_genre`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -33,6 +33,45 @@ main .list-group li {
   }
 }
 
+@media screen and (max-width: 410px) {
+  main .card-img-top {
+    width: 100%;
+  }
+}
+
+main a {
+  color: #111;
+}
+
+main .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main .img-container:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+@media screen and (max-width: 507.5px) {
+  main .img-container {
+    margin-bottom: 10px;
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -77,65 +116,55 @@ header .form .btn:hover {
   opacity: 1;
 }
 
-#movies img, #directors img, #actors img {
+#movies img, #directors img, #actors img, #genre img {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 
 @media screen and (max-width: 575.5px) {
-  #movies img, #directors img, #actors img {
+  #movies img, #directors img, #actors img, #genre img {
     width: 310px;
   }
 }
 
-#movies .list-section figcaption, #directors .list-section figcaption, #actors .list-section figcaption {
+#movies .list-section figcaption, #directors .list-section figcaption, #actors .list-section figcaption, #genre .list-section figcaption {
   color: #212529;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
 
-#movies .img-container, #directors .img-container, #actors .img-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
-#movies .img-container:hover, #directors .img-container:hover, #actors .img-container:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-}
-
-@media screen and (max-width: 507.5px) {
-  #movies .img-container, #directors .img-container, #actors .img-container {
-    margin-bottom: 10px;
-  }
-}
-
-#detail-director .fs-filmography, #detail-actor .fs-filmography {
+#detail-director .fs-filmography, #detail-actor .fs-filmography, #detail-movie .fs-filmography, #detail-genre .fs-filmography {
   font-size: 22px;
 }
 
 @media screen and (min-width: 1200px) {
-  #detail-director .col-xl-2, #detail-actor .col-xl-2 {
+  #detail-director .col-xl-2, #detail-actor .col-xl-2, #detail-movie .col-xl-2, #detail-genre .col-xl-2 {
     width: 18.666667%;
   }
 }
 
 #detail-movie h1 {
   font-size: calc(0.9rem + .9vw);
+}
+
+#detail-movie .list-group {
+  line-height: 30px;
+}
+
+#genre figure {
+  margin: 0;
+}
+
+#genre figcaption {
+  position: absolute;
+  top: 50%;
+  color: white !important;
+  text-transform: uppercase;
+  right: 0;
+  margin: auto;
+  left: 0;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

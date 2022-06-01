@@ -9,9 +9,9 @@
         <?php foreach($actors->fetchAll() as $actor): ?>
             <div class="col-sm-5 col-lg-3 mb-4 mb-sm-0 img-container align-items-center">
                 <figure>
-                    <a href=" index.php?action=actor&id=<?=$actor['id_actor'] ?>">   
+                    <a href=" index.php?action=detailActor&id=<?=$actor['id_actor'] ?>">   
                         <img class="img-fluid" src="<?= $actor['poster']?>" alt="<?=$actor['firstname']. " ". $actor['lastname']?>">
-                        <figcaption><?= $actor['firstname']. " ". $actor['lastname']?></figcaption>
+                        <figcaption class="m-auto"> <?= $actor['firstname']. " ". $actor['lastname']?></figcaption>
                     </a>
                 </figure>
             </div>
