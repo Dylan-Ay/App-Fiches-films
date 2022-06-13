@@ -128,6 +128,10 @@ header .form .btn:hover {
   }
 }
 
+#movies .list-section, #directors .list-section, #actors .list-section, #genre .list-section {
+  row-gap: 30px;
+}
+
 #movies .list-section figcaption, #directors .list-section figcaption, #actors .list-section figcaption, #genre .list-section figcaption {
   color: #212529;
   max-width: -webkit-fit-content;

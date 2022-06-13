@@ -5,8 +5,8 @@
     foreach ($displayMovieByGenre as $key => $movie) {
     }
 
-    $title="Film du genre ". $displayMovieByGenre[$key]['genre_name'];
-    $h1 = "Film du genre ". $displayMovieByGenre[$key]['genre_name'];
+    $title="Films du genre ". $displayMovieByGenre[$key]['genre_name'];
+    $h1 = "Films du genre ". $displayMovieByGenre[$key]['genre_name'];
 ?>
 
 <section id="movies">

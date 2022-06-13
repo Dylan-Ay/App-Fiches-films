@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once "controllers/WelcomeController.php";
     require_once "controllers/ActorController.php";
     require_once "controllers/MovieController.php";
@@ -41,6 +42,13 @@
             case "detailGenre":
                 $genreCtrl->getAllMoviesByGenre($_GET['id']);
                 break;
+            case "addMovie":
+                $movieCtrl->addMovie();
+                break;
+            case "deleteMovie":
+                $movieCtrl->deleteMovie($_GET['id']);
+                break;
+
         }
     }
     else{

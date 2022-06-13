@@ -10,11 +10,18 @@ class DAO{
         );
     }
 
-    public function getBdd(){
+    public function getBdd()
+    {
         return $this->db;
     }
+
+    public function lastInsertId()
+    {
+        return $this->db->lastInsertId();
+    }
     
-    public function executeRequest($sql, $params = NULL){
+    public function executeRequest($sql, $params = NULL)
+    {
         if ($params == NULL){
             $result = $this->db->query($sql);
         }else{
