@@ -6,7 +6,7 @@
     $genresNamesList = $genresNames->fetchAll();
 ?>
 
-<section id="addMovie">
+<section id="add-movie">
     
     <?php if (isset($_SESSION['message'])): echo $_SESSION['message']; endif; ?>
     <form class=" w-50 m-auto" action="index.php?action=addMovie" method="post">
@@ -29,7 +29,7 @@
             </select>
 
             <label for="genre">Genre:</label>
-            <select class="form-control mb-3" name="genre" id="genre" multiple>
+            <select class="form-control mb-3" name="genre" id="genre">
                 <option value="select-director" disabled selected hidden>Veuillez selectionner un genre</option>
                 <?php foreach ($genresNamesList as $key => $value):?>
                     <option value="<?= $genresNamesList[$key]['id_genre']?>"> <?= $genresNamesList[$key]['name_genre']?> </option>

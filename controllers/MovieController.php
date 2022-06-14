@@ -142,4 +142,91 @@ class MovieController{
         $stateDeleteMovie = $db->executeRequest($sql3, ["id" => $id]);
         header('Location: index.php?action=moviesList');
     }
+
+    public function modifyMovie($id)
+    {
+        // Get all the directors names for the select
+        $db = new DAO;
+        $sql1 =
+        "SELECT firstname, lastname, d.id_director AS id_director
+        FROM person p
+        INNER JOIN director d
+        ON p.id_person = d.id_person
+        ORDER BY p.firstname";
+        $directorsNames = $db->executeRequest($sql1);
+
+        // Get all genres names for the select
+        $db = new DAO;
+        $sql2 =
+        "SELECT mg.id_genre AS id_genre, g.name AS name_genre
+        FROM movie_genre mg
+        INNER JOIN genre g 
+        ON mg.id_genre = g.id_genre
+        GROUP BY g.name
+        ORDER BY g.name ASC";
+        $genresNames = $db->executeRequest($sql2);
+
+        $db = new DAO;
+        $sql3 = 
+        "SELECT title, DATE_FORMAT(release_date, '%d %M %Y') AS release_date, length, synopsis, rate, m.poster AS poster, p.firstname AS firstname, p.lastname AS lastname, m.id_director AS id_director, g.name AS genre, m.id_movie AS id_movie 
+        FROM movie m
+        INNER JOIN director d
+        ON d.id_director = m.id_director
+        INNER JOIN person p 
+        ON p.id_person = d.id_person
+        INNER JOIN movie_genre mg
+        ON mg.id_movie = m.id_movie
+        INNER JOIN genre g
+        ON g.id_genre= mg.id_genre
+        WHERE m.id_movie = :id";
+        $stateMovie = $db->executeRequest($sql3, ["id" => $id]);
+        
+         // Restrictions for the inputs received
+         if ($_SERVER["REQUEST_METHOD"] === "POST"){
+
+            // if (!empty($_POST['title']) && !empty($_POST['release_date']) && !empty($_POST['length']) && filter_var($_POST['length'], FILTER_VALIDATE_INT) && !empty($_POST['rate']) && filter_var($_POST['rate'], FILTER_VALIDATE_INT) && !empty($_POST['synopsis']) && !empty($_POST['director']) && !empty($_POST['genre']) && empty($_POST['id-movie'])){
+
+                $title = htmlspecialchars(trim($_POST['title']));
+                
+                $releaseDate = htmlspecialchars(trim($_POST['release_date']));
+
+                $length = htmlspecialchars(trim($_POST['length']));
+                
+                $rate = htmlspecialchars(trim($_POST['rate']));
+                
+                $synopsis = htmlspecialchars(trim($_POST['synopsis']));
+
+                $idMovie = $_POST['id-movie'];
+
+                $director = explode("_",$_POST['director']);
+                $directorId = $director[0];
+
+                $genre = explode("_",$_POST['genre']);
+                $genreId = $genre[0];
+
+                // Update db
+                $db = new DAO;
+                $sql4 = 
+                " UPDATE movie SET `title` = '$title', `release_date` = '$releaseDate' , `length` = $length, `synopsis` = '$synopsis', `rate` = $rate, `id_director` = $directorId
+                WHERE id_movie = 5 ";
+
+                $stateAddMovie = $db->executeRequest($sql4);
+
+                // $sql5 = 
+                // "UPDATE movie_genre SET `id_genre` = '$genreId' 
+                // WHERE `id_movie` = '$idMovie' ";
+                
+                // $stateMovieGenre = $db->executeRequest($sql5);
+
+                // Informations messages
+                $_SESSION['message'] = "<div class='alert alert-success' role='alert'>
+                Le film a bien été mis à jour</div>";
+            // } else{
+            //     $_SESSION['message'] = "<div class='alert alert-danger' role='alert'>
+            //     Le formulaire comporte une erreur</div>";
+            // }
+            header('Location: index.php?action=modifyMovie&id=5');
+        }
+        require "views/movie/modifyMovie.php";
+    }
 }

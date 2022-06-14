@@ -48,6 +48,9 @@
             case "deleteMovie":
                 $movieCtrl->deleteMovie($_GET['id']);
                 break;
+            case "modifyMovie":
+                $movieCtrl->modifyMovie($_GET['id']);
+                break;
 
         }
     }

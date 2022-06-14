@@ -157,6 +157,10 @@ header .form .btn:hover {
   line-height: 30px;
 }
 
+#modify-movie figure img {
+  max-width: 300px;
+}
+
 #genre figure {
   margin: 0;
 }
