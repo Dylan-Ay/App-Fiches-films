@@ -1,8 +1,13 @@
 <?php
     ob_start();
-    $director = $stateDirector->fetch();
-    $directorMoviesList = $displayMovie->fetchAll();
+
+    if (isset($_GET['id'])){
+        $director = $stateDirector->fetch();
+        $directorMoviesList = $displayMovie->fetchAll();
+    }
     $title= $director['firstname']. " ". $director['lastname'];
+    
+    if (array_key_exists('id_director', $director)):
 ?>
 <section id="detail-director">
     <div class="row justify-content-evenly flex-row">
@@ -49,9 +54,10 @@
         <?php endforeach; ?>
         
     </div>
+    <?php else: header('Location: index.php?action=error'); endif;?>
 </section>
 
 <?php
    $content = ob_get_clean();
-   require "./views/template.php"
+   require "./views/template.php";
 ?>

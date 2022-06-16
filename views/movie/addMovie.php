@@ -1,7 +1,7 @@
 <?php
     ob_start();
     $title="Ajouter un Film";
-    $h1 = "Ajouter un Film";
+    $h1 = "Ajouter un nouveau Film";
     $directorsNamesList = $directorsNames->fetchAll();
     $genresNamesList = $genresNames->fetchAll();
 ?>

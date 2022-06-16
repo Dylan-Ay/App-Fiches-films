@@ -21,7 +21,7 @@ class DirectorController{
     {
         $db = new DAO;
         $sql = 
-        "SELECT firstname, lastname, gender, nationality, poster, DATE_FORMAT(birthdate, '%d %M %Y') AS birthdate, biography
+        "SELECT firstname, lastname, gender, nationality, poster, DATE_FORMAT(birthdate, '%d %M %Y') AS birthdate, biography, d.id_director AS id_director
         FROM person p
         INNER JOIN director d
         ON p.id_person = d.id_person

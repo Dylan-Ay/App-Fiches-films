@@ -26,16 +26,20 @@
             <input class="form-control mb-3" type="number" name="length" id="length" value="<?= $movieInformations['length']?>" required>
 
             <label for="director">Réalisateur:</label>
-            <select class="form-control mb-3" name="director" id="director">
-                <option value="select-director" disabled selected hidden ><?= $movieInformations['firstname']. " ". $movieInformations['lastname'] ?></option>
+            <select class="form-control mb-3" name="director" id="director" required>
+                <option value= "<?= $movieInformations['id_director']?>"> <?= $movieInformations['firstname']. ' '. $movieInformations['lastname']?></option>
+                
                 <?php foreach ($directorsNamesList as $key => $value):?>
-                    <option value="<?= $directorsNamesList[$key]['id_director']?>"> <?= $directorsNamesList[$key]['firstname']. " ". $directorsNamesList[$key]['lastname']?> </option>
+                <option value="<?= $directorsNamesList[$key]['id_director']?>"> 
+                    <?= $directorsNamesList[$key]['firstname']. " ". $directorsNamesList[$key]['lastname']?> 
+                </option>
                 <?php endforeach;?>
             </select>
 
             <label for="genre">Genre:</label>
-            <select class="form-control mb-3" name="genre" id="genre">
-                <option value="select-director" disabled selected hidden><?= $movieInformations['genre'] ?></option>
+            <select class="form-control mb-3" name="genre" id="genre" required>
+                <option value="<?= $movieInformations['id_genre'] ?>"> <?= $movieInformations['genre'] ?></option>
+
                 <?php foreach ($genresNamesList as $key => $value):?>
                     <option value="<?= $genresNamesList[$key]['id_genre']?>"> <?= $genresNamesList[$key]['name_genre']?> </option>
                 <?php endforeach;?>
@@ -56,7 +60,6 @@
 </section>
 
 <?php
-var_dump($movieInformations);
     $content = ob_get_clean();
     require "./views/template.php";
 ?>

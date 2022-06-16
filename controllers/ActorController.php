@@ -19,7 +19,7 @@ class ActorController{
     public function findOneById($id) {
         $db = new DAO;
         $sql = 
-        "SELECT firstname, lastname, gender, nationality, poster, DATE_FORMAT(birthdate, '%d %M %Y') AS birthdate, biography
+        "SELECT firstname, lastname, gender, nationality, poster, DATE_FORMAT(birthdate, '%d %M %Y') AS birthdate, biography, a.id_actor AS id_actor
         FROM person p
         INNER JOIN actor a
         ON p.id_person = a.id_person

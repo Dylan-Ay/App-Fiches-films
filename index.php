@@ -5,6 +5,7 @@
     require_once "controllers/MovieController.php";
     require_once "controllers/GenreController.php";
     require_once "controllers/DirectorController.php";
+    require_once "controllers/ErrorController.php";
     include 'service/functions.php';
 
     $welcomeCtrl = new WelcomeController;
@@ -12,6 +13,7 @@
     $actorCtrl = new ActorController;
     $directorCtrl = new DirectorController;
     $genreCtrl = new GenreController;
+    $errorCtrl = new ErrorController;
 
     if(isset($_GET['action'])){
         switch($_GET['action']){  
@@ -51,10 +53,14 @@
             case "modifyMovie":
                 $movieCtrl->modifyMovie($_GET['id']);
                 break;
-
+            case "error":
+                $errorCtrl->errorPage();
+                break;
+            default:
+                header('Location: index.php?action=home');
         }
     }
     else{
-        $welcomeCtrl->welcomePage();
+        header('Location: index.php?action=home');
     }
 ?>

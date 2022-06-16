@@ -1,8 +1,13 @@
 <?php
     ob_start();
-    $actor = $stateActor->fetch();
-    $actorMoviesList = $displayMovie->fetchAll();
+
+    if (isset($_GET['id'])){
+        $actor = $stateActor->fetch();
+        $actorMoviesList = $displayMovie->fetchAll();
+    }
     $title= $actor['firstname']. " ". $actor['lastname'];
+    
+    if (array_key_exists('id_actor', $actor)):
 ?>
 
 <section id="detail-director">
@@ -50,9 +55,10 @@
         <?php endforeach; ?>
 
     </div>
+    <?php else: header('Location: index.php?action=error'); endif;?>
 </section>
 
 <?php
    $content = ob_get_clean();
-   require "./views/template.php"
+   require "./views/template.php";
 ?>

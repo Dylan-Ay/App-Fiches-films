@@ -17,11 +17,7 @@
                     <figcaption> <?= $movie['title']?> </figcaption>
                 </a>
             </figure>
-            <a href="index.php?action=modifyMovie&id=<?=$movie['id_movie']?>" class="d-flex justify-content-center py-2 btn btn-outline-secondary align-items-center bold mb-2">
-                <i class="fa-solid fa-angle-right me-1"></i>Modifier ce film</a>
-            <a href="index.php?action=deleteMovie&id=<?=$movie['id_movie']?>" class="d-flex justify-content-center py-2 btn btn-outline-danger align-items-center bold">
-                <i class="fa-solid fa-angle-right me-1"></i>Supprimer ce film</a>
-            </div>
+        </div>
         <?php endforeach; ?>
     </div>
 </section>

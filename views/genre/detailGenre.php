@@ -1,12 +1,16 @@
 <?php
     ob_start();
 
-    $displayMovieByGenre = $displayMovie->fetchAll();
-    foreach ($displayMovieByGenre as $key => $movie) {
+    if (isset($_GET['id'])){
+        $displayMovieByGenre = $displayMovie->fetchAll();
+        foreach ($displayMovieByGenre as $key => $movie) {
+        }
+        $title="Films du genre ". $displayMovieByGenre[$key]['genre_name'];
+        $h1 = "Films du genre ". $displayMovieByGenre[$key]['genre_name'];
     }
+    $title = $movie['title'];
 
-    $title="Films du genre ". $displayMovieByGenre[$key]['genre_name'];
-    $h1 = "Films du genre ". $displayMovieByGenre[$key]['genre_name'];
+    if (array_key_exists('id_genre', $displayMovieByGenre[$key])):
 ?>
 
 <section id="movies">
@@ -22,6 +26,7 @@
             </div>
         <?php endforeach; ?>
     </div>
+    <?php else: header('Location: index.php?action=error'); endif;?>
 </section>
 
 <?php
