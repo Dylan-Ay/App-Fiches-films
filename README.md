@@ -17,13 +17,6 @@ The functionalities are :
 - Having differents clickable informations inside each movie information page (Director, Casting, Gender)
 - Having a full recap page with the products in cart, having the possibility to manage the quantity and to see the final price
 
-Future functionalities :
-- Search Option
-- Administrator page, which will be the only one to be able to execute an action in relation to the movies
-- User account, which will have the possibility to add as favorite a certain movie, to rate and let a comment to a movie
-- Serie category
-- Landing page
-
 Stacks used :
 - PHP
 
