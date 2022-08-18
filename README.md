@@ -18,7 +18,7 @@ The functionalities are :
 - Having a full recap page with the products in cart, having the possibility to manage the quantity and to see the final price
 
 Stacks used :
-- PHP
+- PHP POO
 
 Css extension :
 - Sass
